@@ -78,6 +78,12 @@ The Agent should produce user-readable research materials, not only raw tables. 
 - `references/data-and-outputs.md`: Public output files under `outputs/live/` and how to use them.
 - `references/agent-boundary.md`: What the Agent can do, what it cannot do, and trading boundaries.
 
+## Python Utility Script
+
+- `scripts/agent_package.py validate`: validate the public Agent package, references, outputs, and chart files.
+- `scripts/agent_package.py summarize`: read `outputs/live/` and emit a JSON summary for another AI agent.
+- `scripts/agent_package.py summarize --brief outputs/live/generated_brief.md`: write a Markdown brief for research notes.
+
 ## Pandadata Methods
 
 - `get_option_implied_volatility`

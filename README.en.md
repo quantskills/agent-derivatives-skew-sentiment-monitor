@@ -46,6 +46,20 @@ This repository includes a packaged Pandadata live sample output under `outputs/
 - `references/data-and-outputs.md`: Public output files under `outputs/live/` and how to use them.
 - `references/agent-boundary.md`: What the Agent can do, what it cannot do, and trading boundaries.
 
+## Python Script
+
+This repository includes a dependency-free Python utility script:
+
+```powershell
+py -3.10 scripts/agent_package.py validate
+py -3.10 scripts/agent_package.py summarize
+py -3.10 scripts/agent_package.py summarize --brief outputs/live/generated_brief.md
+```
+
+- `validate`: Checks `AGENT.md`, READMEs, references, public outputs, and chart files.
+- `summarize`: Reads `outputs/live/` and prints a JSON summary for other AI agents.
+- `--brief`: Writes a Markdown brief for research notes or handoff.
+
 ## Pandadata Methods
 
 - `get_option_implied_volatility`

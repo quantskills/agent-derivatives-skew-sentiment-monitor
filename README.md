@@ -46,6 +46,20 @@
 - `references/data-and-outputs.md`：说明 `outputs/live/` 下每个公开产物的用途。
 - `references/agent-boundary.md`：说明 Agent 能做什么、不能做什么，以及交易边界。
 
+## Python 脚本
+
+本仓库附带一个无第三方依赖的 Python 工具脚本：
+
+```powershell
+py -3.10 scripts/agent_package.py validate
+py -3.10 scripts/agent_package.py summarize
+py -3.10 scripts/agent_package.py summarize --brief outputs/live/generated_brief.md
+```
+
+- `validate`：检查 `AGENT.md`、README、references、公开产物和图表是否完整。
+- `summarize`：读取 `outputs/live/`，输出适合其他 AI Agent 使用的 JSON 摘要。
+- `--brief`：额外生成一份 Markdown 简报，方便复制进研究日志。
+
 ## 使用的数据
 
 - `get_option_implied_volatility`
