@@ -1,0 +1,7 @@
+{
+  "state": "iv-premium-watch",
+  "median_implied_volatility": 35.6,
+  "underlying_historical_volatility_pct": 14.576500000000001,
+  "iv_minus_hv": 21.0235,
+  "confidence": "medium"
+}

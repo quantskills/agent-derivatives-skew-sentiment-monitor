@@ -1,0 +1,9 @@
+table,rows,columns,source,usage
+fina_reports,4,"cfs_cash_inflow_operating, cfs_cash_oth_operating, date, quarter, symbol",Pandadata,支撑本 Agent 的状态判断、图表或观察清单
+future_dominant_corr,9,"correlation, pair",Pandadata,支撑本 Agent 的状态判断、图表或观察清单
+index_weights,600,"date, index_symbol, stock_symbol, weight",Pandadata,支撑本 Agent 的状态判断、图表或观察清单
+industry_constituents,1,"in_date, l1_code, l1_name, l2_code, l2_name, l3_code, l3_name, out_date, stock_name, stock_symbol",Pandadata,支撑本 Agent 的状态判断、图表或观察清单
+lhb_list,550,"amount, change_rate, date, deviation, reason, symbol, turnover, type, volume",Pandadata,支撑本 Agent 的状态判断、图表或观察清单
+margin,7,"buy_on_margin_value, date, margin_balance, margin_type, short_balance, symbol, total_balance",Pandadata,支撑本 Agent 的状态判断、图表或观察清单
+option_implied_volatility,5404,"date, implied_volatility, symbol",Pandadata,支撑本 Agent 的状态判断、图表或观察清单
+option_underlying_volatility,1,"close, date, historical_volatility, period, symbol",Pandadata,支撑本 Agent 的状态判断、图表或观察清单

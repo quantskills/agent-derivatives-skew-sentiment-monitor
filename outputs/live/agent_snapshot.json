@@ -1,0 +1,54 @@
+{
+    "agent":  "agent-derivatives-skew-sentiment-monitor",
+    "title_zh":  "衍生品偏斜情绪盯盘 Agent",
+    "title_en":  "Derivatives Skew Sentiment Monitor",
+    "category":  "monitor-agent",
+    "tags":  [
+                 "derivatives",
+                 "options",
+                 "sentiment",
+                 "pandadata"
+             ],
+    "state":  "iv-premium-watch",
+    "risk_level":  "高关注",
+    "decision_question":  "期权市场是否正在为风险或事件预期支付明显溢价？",
+    "primary_watch_focus":  "隐含波动率、历史波动率、IV-HV 差和高隐波合约。",
+    "scorecard":  {
+                      "state":  "iv-premium-watch",
+                      "median_implied_volatility":  35.6,
+                      "underlying_historical_volatility_pct":  14.576500000000001,
+                      "iv_minus_hv":  21.0235,
+                      "confidence":  "medium"
+                  },
+    "data_source":  "Pandadata",
+    "date_windows":  {
+                         "market":  [
+                                        "20250102",
+                                        "20250110"
+                                    ],
+                         "lhb":  [
+                                     "20250102",
+                                     "20250110"
+                                 ],
+                         "options":  [
+                                         "20260310",
+                                         "20260310"
+                                     ]
+                     },
+    "reader_outputs":  [
+                           "report.html",
+                           "handoff_card.md",
+                           "research_journal_template.md"
+                       ],
+    "machine_outputs":  [
+                            "agent_snapshot.json",
+                            "alert_rules.json"
+                        ],
+    "tabular_outputs":  [
+                            "scorecard_metrics.csv",
+                            "data_dictionary.csv",
+                            "decision_matrix.csv",
+                            "monitoring_checklist.csv"
+                        ],
+    "quality_status":  "pass"
+}
