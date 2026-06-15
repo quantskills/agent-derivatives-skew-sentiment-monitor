@@ -1,4 +1,4 @@
-# Agent Boundary / 使用边界
+﻿# Agent Boundary / 使用边界
 
 这个仓库是 QuantSkills 组织的研究与盯盘 Agent，不是自动交易系统。
 
@@ -26,4 +26,4 @@
 
 ## 给 AI Agent 的要求
 
-调用本 Agent 时，应优先读取 `AGENT.md`、`README.md` 和 `references/`。如果数据不足，应输出“证据不足”或“需要复核”，不要补造结论。
+调用本 Agent 时，应优先读取 `AGENTS.md`、`README.md` 和 `references/`。如果数据不足，应输出“证据不足”或“需要复核”，不要补造结论。

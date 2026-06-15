@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import argparse
 import csv
@@ -22,7 +22,7 @@ FORBIDDEN_TERMS = [
     "SS" + "Quant",
     "Q" + "lib",
 ]
-REQUIRED_ROOT_FILES = ["AGENT.md", "README.md", "README.en.md", "LICENSE"]
+REQUIRED_ROOT_FILES = ["AGENTS.md", "README.md", "README.en.md", "LICENSE"]
 REQUIRED_REFERENCES = [
     "references/methodology.md",
     "references/data-and-outputs.md",
@@ -65,7 +65,7 @@ def public_files(root: Path) -> list[Path]:
             continue
         if any(part in ignored_parts for part in path.parts):
             continue
-        if path.name == "LICENSE" or path.suffix in suffixes or path.name in {"AGENT.md", "README.md", "README.en.md"}:
+        if path.name == "LICENSE" or path.suffix in suffixes or path.name in {"AGENTS.md", "README.md", "README.en.md"}:
             out.append(path)
     return out
 
@@ -90,7 +90,7 @@ def validate(root: Path, output_dir: Path) -> dict[str, Any]:
     if len(charts) < 3:
         errors.append(f"expected at least 3 chart png files, found {len(charts)}")
 
-    agent_md = read_text(root / "AGENT.md") if (root / "AGENT.md").exists() else ""
+    agent_md = read_text(root / "AGENTS.md") if (root / "AGENTS.md").exists() else ""
     for fragment in [
         "organization: QuantSkills",
         "organization_url: https://github.com/quantskills",
@@ -102,9 +102,9 @@ def validate(root: Path, output_dir: Path) -> dict[str, Any]:
         "Boundary",
     ]:
         if fragment not in agent_md:
-            errors.append(f"AGENT.md missing fragment: {fragment}")
+            errors.append(f"AGENTS.md missing fragment: {fragment}")
     if not re.search(r"description:\s*[\"'].*Use when", agent_md, flags=re.IGNORECASE | re.DOTALL):
-        errors.append("AGENT.md description should contain a clear Use when trigger")
+        errors.append("AGENTS.md description should contain a clear Use when trigger")
 
     for path in public_files(root):
         if path.name == "LICENSE":
@@ -138,7 +138,7 @@ def summarize(root: Path, output_dir: Path, brief_path: Path | None) -> dict[str
         "risk_level": snapshot.get("risk_level"),
         "decision_question": snapshot.get("decision_question"),
         "watch_focus": snapshot.get("primary_watch_focus"),
-        "pandadata_methods": re.findall(r"`([^`]+)`", read_text(root / "AGENT.md").split("## Pandadata Methods", 1)[-1]),
+        "pandadata_methods": re.findall(r"`([^`]+)`", read_text(root / "AGENTS.md").split("## Pandadata Methods", 1)[-1]),
         "scorecard": scorecard,
         "charts": charts,
         "decision_rows": decision_rows,

@@ -1,4 +1,4 @@
-# Derivatives Skew Sentiment Monitor
+﻿# Derivatives Skew Sentiment Monitor
 
 This is a QuantSkills Pandadata research and monitoring agent: `agent-derivatives-skew-sentiment-monitor`.
 
@@ -56,7 +56,7 @@ py -3.10 scripts/agent_package.py summarize
 py -3.10 scripts/agent_package.py summarize --brief outputs/live/generated_brief.md
 ```
 
-- `validate`: Checks `AGENT.md`, READMEs, references, public outputs, and chart files.
+- `validate`: Checks `AGENTS.md`, READMEs, references, public outputs, and chart files.
 - `summarize`: Reads `outputs/live/` and prints a JSON summary for other AI agents.
 - `--brief`: Writes a Markdown brief for research notes or handoff.
 
