@@ -46,6 +46,20 @@ This repository includes a packaged Pandadata live sample output under `outputs/
 - `references/data-and-outputs.md`: Public output files under `outputs/live/` and how to use them.
 - `references/agent-boundary.md`: What the Agent can do, what it cannot do, and trading boundaries.
 
+## Regenerate With Your Own Pandadata Account
+
+The bundled `outputs/live/` folder is a readable example output. If you have a Pandadata account, you can regenerate the report locally from live data:
+
+```powershell
+py -3.10 -m pip install -r requirements.txt
+Copy-Item .env.example .env
+# Fill PANDADATA_USERNAME and PANDADATA_PASSWORD in .env
+py -3.10 scripts/run_pandadata_live.py
+py -3.10 scripts/agent_package.py validate
+```
+
+After the run, open `outputs/live/report.html`. The script fetches Pandadata data again, rebuilds charts, updates the watchlist and handoff materials, and never writes your credentials into output files.
+
 ## Python Script
 
 This repository includes a dependency-free Python utility script:

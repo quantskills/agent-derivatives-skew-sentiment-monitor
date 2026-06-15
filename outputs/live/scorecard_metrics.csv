@@ -1,6 +1,7 @@
-metric,value,type,reader_note
-state,iv-premium-watch,str,核心状态字段
-median_implied_volatility,35.60,float,用于复核本次判断的证据字段
-underlying_historical_volatility_pct,14.58,float,用于复核本次判断的证据字段
-iv_minus_hv,21.02,float,用于复核本次判断的证据字段
-confidence,medium,str,用于复核本次判断的证据字段
+﻿metric,value,type,reader_note
+state,iv-premium-watch,str,用于复核本次判断的核心字段
+median_implied_volatility,35.6000,float,用于复核本次判断的核心字段
+underlying_historical_volatility_pct,14.5765,float,用于复核本次判断的核心字段
+iv_minus_hv,21.0235,float,用于复核本次判断的核心字段
+iv_rows,5404,int,用于复核本次判断的核心字段
+confidence,medium,str,用于复核本次判断的核心字段

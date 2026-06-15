@@ -1,0 +1,32 @@
+{
+  "ok": true,
+  "agent": "agent-derivatives-skew-sentiment-monitor",
+  "output_dir": "outputs/live",
+  "data_source": "Pandadata",
+  "tables": {
+    "option_implied_volatility": {
+      "rows": 5404,
+      "columns": [
+        "date",
+        "implied_volatility",
+        "symbol"
+      ]
+    },
+    "option_underlying_volatility": {
+      "rows": 1,
+      "columns": [
+        "close",
+        "date",
+        "historical_volatility",
+        "period",
+        "symbol"
+      ]
+    }
+  },
+  "charts": [
+    "charts/iv_distribution.png",
+    "charts/iv_top_contracts.png",
+    "charts/scorecard_metrics.png"
+  ],
+  "report": "outputs/live/report.html"
+}

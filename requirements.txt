@@ -1,0 +1,3 @@
+panda-data
+pandas
+matplotlib

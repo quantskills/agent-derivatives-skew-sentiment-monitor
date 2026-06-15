@@ -1,8 +1,4 @@
-priority,item,why,source,next_action
-P0,隐含波动率、历史波动率、IV-HV 差和高隐波合约。,这是最容易改变当前判断的证据组。,Pandadata,下一个观察窗口重跑并比较状态是否升级或降级。
-P1,IV-HV 差继续扩大，且高隐波集中在有解释力的到期或行权结构。,满足后说明当前状态可能强化。,scorecard + report.html,进入升级观察并补充交叉验证。
-P1,隐波快速回落，或历史波动率上升解释了大部分溢价。,满足后说明当前解释可能失效。,scorecard + evidence.json,降低置信度并写入复盘日志。
-P2,fina_reports 行数和字段稳定性,数据质量变化会影响报告可信度。,fina_reports,确认 4 行数据是否满足研究窗口要求。
-P2,future_dominant_corr 行数和字段稳定性,数据质量变化会影响报告可信度。,future_dominant_corr,确认 9 行数据是否满足研究窗口要求。
-P2,index_weights 行数和字段稳定性,数据质量变化会影响报告可信度。,index_weights,确认 600 行数据是否满足研究窗口要求。
-P2,industry_constituents 行数和字段稳定性,数据质量变化会影响报告可信度。,industry_constituents,确认 1 行数据是否满足研究窗口要求。
+﻿priority,item,why_it_matters,current_value,next_check
+1,核心状态是否延续,期权隐含波动率相对标的历史波动率是否显示风险偏好变化？,iv-premium-watch,下一次 Pandadata 数据刷新后重跑本脚本。
+2,反证条件是否出现,防止把短期噪声误读成稳定结构。,见 decision_matrix.csv,对照升级/降级观察条件。
+3,数据覆盖是否足够,样本行数和字段完整度会影响解释强度。,medium,查看 data_dictionary.csv。

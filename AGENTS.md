@@ -84,6 +84,18 @@ The Agent should produce user-readable research materials, not only raw tables. 
 - `scripts/agent_package.py summarize`: read `outputs/live/` and emit a JSON summary for another AI agent.
 - `scripts/agent_package.py summarize --brief outputs/live/generated_brief.md`: write a Markdown brief for research notes.
 
+
+Live Pandadata regeneration:
+
+```powershell
+py -3.10 -m pip install -r requirements.txt
+Copy-Item .env.example .env
+py -3.10 scripts/run_pandadata_live.py
+py -3.10 scripts/agent_package.py validate
+```
+
+`run_pandadata_live.py` reads `PANDADATA_USERNAME`, `PANDADATA_PASSWORD`, and optional `PANDADATA_BASE_URL` from the environment or a local `.env` file. It rebuilds the public `outputs/live/` report pack for this Agent only.
+
 ## Pandadata Methods
 
 - `get_option_implied_volatility`

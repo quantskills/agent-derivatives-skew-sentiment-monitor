@@ -1,26 +1,21 @@
 {
-  "agent": "agent-derivatives-skew-sentiment-monitor",
-  "state": "iv-premium-watch",
-  "risk_level": "高关注",
-  "execution_boundary": "research_and_monitoring_only",
+  "agent_state": "iv-premium-watch",
   "rules": [
     {
-      "id": "agent-derivatives-skew-sentiment-monitor.upgrade",
-      "severity": "watch_upgrade",
-      "condition": "IV-HV 差继续扩大，且高隐波集中在有解释力的到期或行权结构。",
-      "action": "rerun_agent_and_add_to_research_backlog"
+      "level": "watch",
+      "condition": "核心状态延续",
+      "action": "更新研究日志并保留观察"
     },
     {
-      "id": "agent-derivatives-skew-sentiment-monitor.degrade",
-      "severity": "watch_degrade",
-      "condition": "隐波快速回落，或历史波动率上升解释了大部分溢价。",
-      "action": "lower_confidence_and_write_review_note"
+      "level": "upgrade",
+      "condition": "核心指标继续同向强化",
+      "action": "提高复盘频率"
     },
     {
-      "id": "agent-derivatives-skew-sentiment-monitor.data_gap",
-      "severity": "data_quality",
-      "condition": "Pandadata 关键表行数低于本 Agent 需要的最低样本数",
-      "action": "stop_and_mark_inconclusive"
+      "level": "downgrade",
+      "condition": "核心指标反向或数据不足",
+      "action": "降级当前解释权重"
     }
-  ]
+  ],
+  "trading_boundary": "Research and monitoring only. No automatic order placement."
 }

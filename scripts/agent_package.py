@@ -22,7 +22,15 @@ FORBIDDEN_TERMS = [
     "SS" + "Quant",
     "Q" + "lib",
 ]
-REQUIRED_ROOT_FILES = ["AGENTS.md", "README.md", "README.en.md", "LICENSE"]
+REQUIRED_ROOT_FILES = [
+    "AGENTS.md",
+    "README.md",
+    "README.en.md",
+    "LICENSE",
+    "requirements.txt",
+    ".env.example",
+    "scripts/run_pandadata_live.py",
+]
 REQUIRED_REFERENCES = [
     "references/methodology.md",
     "references/data-and-outputs.md",
@@ -58,7 +66,7 @@ def read_csv(path: Path, limit: int | None = None) -> list[dict[str, str]]:
 
 def public_files(root: Path) -> list[Path]:
     ignored_parts = {".git", "__pycache__"}
-    suffixes = {".md", ".yaml", ".yml", ".json", ".csv", ".html", ".txt", ".gitignore", ".gitattributes"}
+    suffixes = {".md", ".yaml", ".yml", ".json", ".csv", ".html", ".txt", ".py", ".example", ".gitignore", ".gitattributes"}
     out: list[Path] = []
     for path in root.rglob("*"):
         if not path.is_file():
@@ -89,6 +97,12 @@ def validate(root: Path, output_dir: Path) -> dict[str, Any]:
     charts = sorted((output_dir / "charts").glob("*.png")) if (output_dir / "charts").exists() else []
     if len(charts) < 3:
         errors.append(f"expected at least 3 chart png files, found {len(charts)}")
+    runner_path = root / "scripts" / "run_pandadata_live.py"
+    if runner_path.exists():
+        try:
+            compile(read_text(runner_path), str(runner_path), "exec")
+        except SyntaxError as exc:
+            errors.append(f"scripts/run_pandadata_live.py syntax error: {exc}")
 
     agent_md = read_text(root / "AGENTS.md") if (root / "AGENTS.md").exists() else ""
     for fragment in [
