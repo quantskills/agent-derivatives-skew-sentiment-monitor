@@ -1,0 +1,16 @@
+name: "agent-derivatives-skew-sentiment-monitor"
+display_name: "Derivatives Skew Sentiment Monitor"
+short_description: "Monitor derivatives sentiment from option implied volatility and underlying historical volatility."
+default_prompt: "Use agent-derivatives-skew-sentiment-monitor with Pandadata live evidence and produce reader-facing research materials."
+metadata:
+  organization: "QuantSkills"
+  organization_url: "https://github.com/quantskills"
+  repository: "quantskills/agent-derivatives-skew-sentiment-monitor"
+  repository_url: "https://github.com/quantskills/agent-derivatives-skew-sentiment-monitor"
+  project_type: "agent"
+  collection: "pandadata-research-monitor-agents-8"
+  license: "GPL-3.0"
+  category: "monitor-agent"
+  tags: ["derivatives", "options", "sentiment", "pandadata"]
+  platforms: ["claude-code", "codex", "openclaw", "cursor"]
+  data_source: "Pandadata"
