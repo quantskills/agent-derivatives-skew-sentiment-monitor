@@ -40,6 +40,12 @@
 | `outputs/live/handoff_card.md` | 把本次判断交给另一个研究员或 AI Agent。 |
 | `outputs/live/data_dictionary.csv` | 查看使用的数据表、字段和行数。 |
 
+## 参考文档
+
+- `references/methodology.md`：解释本 Agent 的判断逻辑、指标含义和适用场景。
+- `references/data-and-outputs.md`：说明 `outputs/live/` 下每个公开产物的用途。
+- `references/agent-boundary.md`：说明 Agent 能做什么、不能做什么，以及交易边界。
+
 ## 使用的数据
 
 - `get_option_implied_volatility`

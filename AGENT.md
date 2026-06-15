@@ -72,6 +72,12 @@ The Agent should produce user-readable research materials, not only raw tables. 
 | `outputs/live/handoff_card.md` | Short handoff for another researcher or AI agent. |
 | `outputs/live/data_dictionary.csv` | Tables, fields, and row counts used in the run. |
 
+## Reference Documents
+
+- `references/methodology.md`: Agent logic, metric interpretation, and intended use.
+- `references/data-and-outputs.md`: Public output files under `outputs/live/` and how to use them.
+- `references/agent-boundary.md`: What the Agent can do, what it cannot do, and trading boundaries.
+
 ## Pandadata Methods
 
 - `get_option_implied_volatility`
