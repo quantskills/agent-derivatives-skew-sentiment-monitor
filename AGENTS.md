@@ -41,6 +41,29 @@ quantSkills:
   summary_en: Monitor derivatives sentiment from option implied volatility and underlying historical volatility.
 ---
 
+```json qsh-form
+{
+  "version": 1,
+  "task": {
+    "placeholder": "补充监控窗口、重点事件、希望观察的风险情景或交付要求"
+  },
+  "fields": [
+    {
+      "key": "underlying",
+      "label": "期权标的",
+      "type": "select",
+      "default": "510050.SH",
+      "options": [
+        { "value": "510050.SH", "label": "上证50ETF（510050）" },
+        { "value": "510300.SH", "label": "沪深300ETF（510300）" },
+        { "value": "510500.SH", "label": "中证500ETF（510500）" }
+      ]
+    }
+  ],
+  "prompt_template": "{{#task}}任务与材料：\n{{task}}\n\n{{/task}}{{#attachments}}用户上传的材料（已放入工作区）：\n{{attachments}}\n\n{{/attachments}}请监控期权标的 {{underlying}} 的衍生品情绪，基于隐含波动率、标的历史波动率、IV-HV 差和高隐波合约给出当前判断、升降级情景、失效条件与后续观察清单，不执行交易，输出中文报告。"
+}
+```
+
 # Derivatives Skew Sentiment Monitor
 
 Use this Agent when a user needs a Pandadata-backed research or monitoring answer for:
