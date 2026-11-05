@@ -130,3 +130,7 @@ py -3.10 scripts/agent_package.py validate
 - Mark missing data as inconclusive instead of filling gaps with assumptions.
 - Do not produce unconditional buy/sell commands.
 - Do not connect to broker order execution.
+
+## Pandadata compatibility
+
+[Pandadata 1.0.6 compatibility](references/pandadata-compatibility.md) — exact SDK baseline, validation scope, and shared guidance for all supported agent runtimes.
